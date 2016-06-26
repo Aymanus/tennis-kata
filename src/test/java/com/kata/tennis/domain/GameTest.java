@@ -30,17 +30,80 @@ public class GameTest {
     }
 
     @Test
-    public void game_should_start_with_score_of_1_0_when_player1_scores(){
+    public void game_should_be_with_score_of_1_0_when_playerOne_scores(){
         game.playerOneScore();
         assertThat( game.getPlayerOneCurrentScore(), is(equalTo(1)));
         assertThat( game.getPlayerTwoCurrentScore(), is(equalTo(0)));
     }
 
     @Test
-    public void game_should_start_with_score_of_1_1_when_player1_scores(){
+    public void game_should_have_score_of_1_1_when_playerOne_scores_and_playerTwo_scores(){
         game.playerOneScore();
         game.playerTwoScore();
         assertThat( game.getPlayerOneCurrentScore(), is(equalTo(1)));
         assertThat( game.getPlayerTwoCurrentScore(), is(equalTo(1)));
+    }
+
+    @Test
+    public void game_should_have_tennis_score_15_15(){
+        game.playerOneScore();
+        game.playerTwoScore();
+        assertThat( game.getTennisScore(), is(equalTo("15-15")));
+    }
+
+    @Test
+    public void game_should_have_tennis_score_15_30(){
+        game.playerOneScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        assertThat( game.getTennisScore(), is(equalTo("15-30")));
+    }
+
+    @Test
+    public void game_should_have_tennis_score_15_40(){
+        game.playerOneScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        assertThat( game.getTennisScore(), is(equalTo("15-40")));
+    }
+
+    @Test
+    public void game_should_have_tennis_score_30_40(){
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        assertThat( game.getTennisScore(), is(equalTo("30-40")));
+    }
+
+    @Test
+    public void game_should_have_tennis_score_40_40(){
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        assertThat( game.getTennisScore(), is(equalTo("40-40")));
+    }
+
+    @Test
+    public void game_should_have_tennis_score_playerOne_Win(){
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerOneScore();
+        assertThat( game.getTennisScore(), is(equalTo("PlayerOne Win")));
+    }
+
+    @Test
+    public void game_should_have_tennis_score_playerTwo_Win(){
+        game.playerTwoScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        assertThat( game.getTennisScore(), is(equalTo("PlayerTwo Win")));
     }
 }

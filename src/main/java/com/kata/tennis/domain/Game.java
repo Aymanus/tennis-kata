@@ -27,6 +27,17 @@ public class Game {
         return playerTwo.getCurrentScore();
     }
 
+    public String getTennisScore(){
+        if(playerOne.getCurrentScore()>3){
+            return playerOne.getName()+" Win";
+        }
+        if(playerTwo.getCurrentScore()>3){
+            return playerTwo.getName()+" Win";
+        }
+        return playerOne.tennisScore()+"-"+playerTwo.tennisScore();
+    }
+
+
     public void playerOneScore(){
         this.playerOne.score();
     }
