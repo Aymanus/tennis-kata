@@ -15,10 +15,6 @@ public class Game {
         this.playerTwo = player2;
     }
 
-    public int getScore() {
-        return score;
-    }
-
     public int getPlayerOneCurrentScore(){
         return playerOne.getCurrentScore();
     }

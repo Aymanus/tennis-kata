@@ -23,10 +23,6 @@ public class Player {
         return currentScore;
     }
 
-    public void setCurrentScore(int currentScore) {
-        this.currentScore = currentScore;
-    }
-
     public void score(){
         this.currentScore++;
     }
