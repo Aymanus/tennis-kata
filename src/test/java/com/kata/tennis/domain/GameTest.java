@@ -119,4 +119,32 @@ public class GameTest {
         game.playerTwoScore();
         assertThat( game.getTennisScore(), is(equalTo("Deuce")));
     }
+
+    @Test
+    public void game_should_have_tennis_score_advantage_PlayerOne(){
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        assertThat( game.getTennisScore(), is(equalTo("Advantage PlayerOne")));
+    }
+
+    @Test
+    public void game_should_have_tennis_score_advantage_PlayerTwo(){
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        assertThat( game.getTennisScore(), is(equalTo("Advantage PlayerTwo")));
+    }
 }

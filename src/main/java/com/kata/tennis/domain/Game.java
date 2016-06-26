@@ -28,9 +28,16 @@ public class Game {
     }
 
     public String getTennisScore(){
-        if(playerOne.getCurrentScore()>3 && playerTwo.getCurrentScore()>3
-                && playerOne.getCurrentScore() == playerTwo.getCurrentScore()){
-            return "Deuce";
+        if(playerOne.getCurrentScore()>3 && playerTwo.getCurrentScore()>3){
+            if(playerOne.getCurrentScore() == playerTwo.getCurrentScore()){
+                return "Deuce";
+            }
+            if(playerOne.getCurrentScore() - playerTwo.getCurrentScore() == 1){
+                return "Advantage PlayerOne";
+            }
+            if(playerTwo.getCurrentScore() - playerOne.getCurrentScore() == 1){
+                return "Advantage PlayerTwo";
+            }
         }
         if(playerOne.getCurrentScore()>3){
             return playerOne.getName()+" Win";
