@@ -21,4 +21,8 @@ public class Player {
     public void setCurrentScore(int currentScore) {
         this.currentScore = currentScore;
     }
+
+    public void score(){
+        this.currentScore++;
+    }
 }

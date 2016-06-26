@@ -28,4 +28,19 @@ public class GameTest {
         assertThat( game.getPlayerOneCurrentScore(), is(equalTo(0)));
         assertThat( game.getPlayerTwoCurrentScore(), is(equalTo(0)));
     }
+
+    @Test
+    public void game_should_start_with_score_of_1_0_when_player1_scores(){
+        game.playerOneScore();
+        assertThat( game.getPlayerOneCurrentScore(), is(equalTo(1)));
+        assertThat( game.getPlayerTwoCurrentScore(), is(equalTo(0)));
+    }
+
+    @Test
+    public void game_should_start_with_score_of_1_1_when_player1_scores(){
+        game.playerOneScore();
+        game.playerTwoScore();
+        assertThat( game.getPlayerOneCurrentScore(), is(equalTo(1)));
+        assertThat( game.getPlayerTwoCurrentScore(), is(equalTo(1)));
+    }
 }

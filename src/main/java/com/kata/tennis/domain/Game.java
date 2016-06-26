@@ -26,4 +26,12 @@ public class Game {
     public int getPlayerTwoCurrentScore(){
         return playerTwo.getCurrentScore();
     }
+
+    public void playerOneScore(){
+        this.playerOne.score();
+    }
+
+    public void playerTwoScore(){
+        this.playerTwo.score();
+    }
 }
