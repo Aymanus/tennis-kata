@@ -3,8 +3,6 @@ package com.kata.tennis.domain;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.PrintStream;
-
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -12,17 +10,17 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by Aymen on 26/06/2016.
  */
-public class JeuTest {
+public class PlayerTest {
 
-    private Jeu jeu;
+    private Player player;
 
     @Before
     public void setup() {
-        jeu = new Jeu();
+        player = new Player("Player One");
     }
 
     @Test
-    public void jeu_should_start_with_0(){
-        assertThat( jeu.getScore(), is(equalTo(0)));
+    public void player_should_start_with_score_of_0(){
+        assertThat( player.getCurrentScore(), is(equalTo(0)));
     }
 }
