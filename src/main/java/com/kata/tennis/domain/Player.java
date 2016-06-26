@@ -1,9 +1,14 @@
 package com.kata.tennis.domain;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by Aymen on 26/06/2016.
  */
 public class Player {
+
+    public static final List<Integer> scores = Arrays.asList(0, 15, 30, 40);
 
     private String name;
 
@@ -27,13 +32,7 @@ public class Player {
     }
 
     public int tennisScore(){
-        if(currentScore == 1)
-            return 15;
-        if(currentScore == 2)
-            return 30;
-        if(currentScore == 3)
-            return 40;
-        return 0;
+        return scores.get(currentScore);
     }
 
     public String getName() {
