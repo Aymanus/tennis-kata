@@ -106,4 +106,17 @@ public class GameTest {
         game.playerTwoScore();
         assertThat( game.getTennisScore(), is(equalTo("PlayerTwo Win")));
     }
+
+    @Test
+    public void game_should_have_tennis_score_deuce(){
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerOneScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        game.playerTwoScore();
+        assertThat( game.getTennisScore(), is(equalTo("Deuce")));
+    }
 }

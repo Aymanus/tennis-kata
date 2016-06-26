@@ -28,6 +28,10 @@ public class Game {
     }
 
     public String getTennisScore(){
+        if(playerOne.getCurrentScore()>3 && playerTwo.getCurrentScore()>3
+                && playerOne.getCurrentScore() == playerTwo.getCurrentScore()){
+            return "Deuce";
+        }
         if(playerOne.getCurrentScore()>3){
             return playerOne.getName()+" Win";
         }
