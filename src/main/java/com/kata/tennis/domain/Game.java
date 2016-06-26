@@ -8,8 +8,6 @@ public class Game {
     private Player playerOne;
     private Player playerTwo;
 
-    private int score;
-
     public Game(Player player1, Player player2) {
         this.playerOne = player1;
         this.playerTwo = player2;
